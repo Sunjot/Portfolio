@@ -1,0 +1,144 @@
+
+// Imports
+
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Neucha|PT+Sans:700');
+
+// Mixins
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin animate($name, $time, $delay, $fill) {
+  animation: $name $time;
+  animation-delay: $delay;
+  animation-fill-mode: $fill;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+#root {
+  width: 100%;
+  @include flex(row, center, flex-start);
+}
+
+.App {
+  @include flex(column, flex-start, center);
+  width: 100%;
+}
+
+// Header component
+
+#header{
+  @include flex(column, flex-start, center);
+  width: 100%;
+  height: 75px;
+  background-color: #e0dbd2;
+
+  #header-link-collect {
+    @include flex(row, center, center);
+    color: #161616;
+    font-family: "Exo 2";
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
+
+    .header-link {
+      margin: 0 50px 0 50px;
+      cursor: pointer;
+      transform: translateY(-50px);
+      opacity: 0;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #d8a347;
+      }
+    }
+
+    #hl1 {
+      @include animate(slideheaders, 1s, 0s, forwards);
+    }
+    #hl2 {
+      @include animate(slideheaders, 1s, 0.1s, forwards);
+    }
+    #hl3 {
+      @include animate(slideheaders, 1s, 0.2s, forwards);
+    }
+  }
+}
+
+@keyframes slideheaders {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+// Intro component
+
+#intro {
+  @include flex(row, flex-start, center);
+  width: 100%;
+  height: 400px;
+  background-color: #e0dbd2;
+  color: #161616;
+
+  #intro-desc {
+    @include flex(column, flex-start, flex-start);
+    margin: 0 0 0 200px;
+    font-family: "PT Sans";
+
+    #role {
+      font-size: 40px;
+      margin: 0 0 10px 0;
+      opacity: 0;
+      @include animate(fadein, 1s, 0s, forwards);
+
+      span {
+        color: #d8a347;
+
+        #span-des {
+          color: #161616;
+          @include animate(flicker, 1s, 1.5s, forwards);
+        }
+      }
+    }
+
+    #name {
+      font-size: 30px;
+      margin: 0;
+      opacity: 0;
+      @include animate(fadein, 1s, 0.5s, forwards);
+    }
+  }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes flicker {
+  0% { color: #161616; }
+  10% { color: #d8a347; }
+  20% { color: #161616; }
+  25% { color: #d8a347; }
+  40% { color: #161616; }
+  50% { color: #d8a347; }
+  55% { color: #161616; }
+  70% { color: #d8a347; }
+  80% { color: #161616; }
+  100% { color: #d8a347; }
+}
