@@ -44,7 +44,6 @@ html, body {
   height: 75px;
   z-index: 10;
   color: white;
-  transition: background-color 0.5s, color 0.1s;
 
   #header-link-collect {
     @include flex(row, center, center);
@@ -60,6 +59,9 @@ html, body {
       transform: translateY(-50px);
       opacity: 0;
       transition: color 0.2s;
+      color: white;
+      text-decoration: none;
+      transition: color 0.5s;
 
       &:hover {
         color: #d8a347;
@@ -75,11 +77,17 @@ html, body {
     #hl3 {
       @include animate(slideheaders, 1s, 0.2s, forwards);
     }
+    #hl4 {
+      @include animate(slideheaders, 1s, 0.3s, forwards);
+    }
   }
 }
 
 .hdr-colored {
   background-color: white;
+}
+
+.black-link {
   color: black !important;
 }
 
@@ -167,6 +175,9 @@ html, body {
   background-color: #e8e3dc;
   width: 100%;
   padding: 30px;
+  box-sizing: border-box;
+  margin-top: 75px;
+  height: 700px;
 
   .heading {
     font-size: 35px;
@@ -192,7 +203,7 @@ html, body {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1281px) {
   #intro {
     #intro-cover {
       background: url('../Images/cover.jpg') no-repeat top center;

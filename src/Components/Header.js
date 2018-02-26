@@ -1,33 +1,48 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import createHistory from "history/createBrowserHistory";
 
 class Header extends Component {
 
   constructor() {
     super();
-    this.headerScroll = this.headerScroll.bind(this);
+    this.changeColor = this.changeColor.bind(this);
+    this.checkPath = this.checkPath.bind(this);
 
     this.state = {
-      headerColor: 'trp'
+      headerColor: 'trp',
+      headerLinkColor: 'header-link white-link'
     }
   }
 
   componentDidMount(){
-    window.addEventListener('scroll', this.headerScroll);
+    const history = createHistory();
+
+    this.checkPath(history.location); // when a page is loaded on address bar enter
+
+    history.listen((location) => { // when a page is loaded through back button
+      this.checkPath(location);
+    });
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.headerScroll);
+  checkPath(p) {
+    if (p.pathname === "/") // when a page is loaded on address bar enter
+      this.changeColor("0");
+    else
+      this.changeColor("1");
   }
 
-  headerScroll(e) {
-    if (window.pageYOffset > 0 && this.state.headerColor === "trp") {
+  changeColor(e) {
+    if (e === "0") {
       this.setState({
-        headerColor: 'hdr-colored'
+        headerColor: "trp",
+        headerLinkColor: "header-link white-link"
       });
     }
-    if (window.pageYOffset === 0) {
+    if (e === "1") {
       this.setState({
-        headerColor: 'trp'
+        headerColor: "hdr-colored",
+        headerLinkColor: "header-link black-link"
       });
     }
   }
@@ -36,9 +51,14 @@ class Header extends Component {
     return (
       <div id="header" className={this.state.headerColor}>
         <div id="header-link-collect">
-          <p id="hl1" className="header-link">home</p>
-          <p id="hl2" className="header-link">my projects</p>
-          <p id="hl3" className="header-link">get in touch</p>
+          <Link id="hl1" className={this.state.headerLinkColor} to="/"
+            onClick={() => this.changeColor("0")}>Home</Link>
+          <Link id="hl2" className={this.state.headerLinkColor} to="/me"
+            onClick={() => this.changeColor("1")}>About Me</Link>
+          <Link id="hl3" className={this.state.headerLinkColor} to="/"
+            onClick={() => this.changeColor("1")}>My Projects</Link>
+          <Link id="hl4" className={this.state.headerLinkColor} to="/"
+            onClick={() => this.changeColor("1")}>Get in Touch</Link>
         </div>
         <div id="header-line"/>
       </div>
