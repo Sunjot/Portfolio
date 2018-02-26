@@ -1,7 +1,7 @@
 
 // Imports
 
-@import url('https://fonts.googleapis.com/css?family=Exo+2|Neucha|PT+Sans:700|Francois+One');
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Neucha|PT+Sans:700|Francois+One|Montserrat');
 
 // Mixins
 
@@ -22,6 +22,7 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: white;
+  overflow-y: hidden;
 }
 
 #root {
@@ -44,6 +45,7 @@ html, body {
   height: 75px;
   z-index: 10;
   color: white;
+  transition: background-color 1s;
 
   #header-link-collect {
     @include flex(row, center, center);
@@ -58,13 +60,12 @@ html, body {
       cursor: pointer;
       transform: translateY(-50px);
       opacity: 0;
-      transition: color 0.2s;
+      transition: color 0.5s;
       color: white;
       text-decoration: none;
-      transition: color 0.5s;
 
       &:hover {
-        color: #d8a347;
+        color: #d8a347 !important;
       }
     }
 
@@ -109,6 +110,7 @@ html, body {
   width: 100%;
   background-color: #e0dbd2;
   color: white;
+  z-index: 9;
 
   #intro-cover {
     width: 100%;
@@ -150,6 +152,24 @@ html, body {
   }
 }
 
+.intro-out {
+  @include animate(slideout, 1s, 0s, forwards);
+}
+
+.intro-in {
+  @include animate(slidein, 1s, 0s, forwards);
+}
+
+@keyframes slideout {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes slidein {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0%); }
+}
+
 @keyframes fadein {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -172,27 +192,55 @@ html, body {
 
 #me {
   @include flex(column, flex-start, center);
-  background-color: #e8e3dc;
+  background-color: #262627;
   width: 100%;
   padding: 30px;
   box-sizing: border-box;
   margin-top: 75px;
   height: 700px;
+  position: absolute;
+  z-index: 5;
+  color: white;
+  overflow-y: auto;
 
-  .heading {
-    font-size: 35px;
-    font-family: "Francois One";
-    text-transform: uppercase;
-    margin: 0 0 10px 0;
+  .title {
+    @include flex(column, center, center);
+
+    .heading {
+      font-size: 35px;
+      font-family: "Francois One";
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
+    }
+
+    .divider {
+      height: 5px;
+      background-color: #d8a347;
+      border-radius: 1px;
+    }
+
+    #me-act {
+      @include animate(dividerExpand, 1s, 0.5s, forwards);
+    }
   }
 
-  .divider {
-    width: 100px;
-    height: 5px;
-    background-color: #d8a347;
-    border-radius: 1px;
+  .desc {
+    font-size: 20px;
+    margin: 40px 100px 40px 100px;
+    line-height: 1.5;
+    text-align: center;
+    color: #e0e0e0;
+    font-family: "Montserrat";
   }
 }
+
+@keyframes dividerExpand {
+  from { width: 0px; }
+  to { width: 100px; }
+}
+
+
+// Media queries
 
 @media (min-width: 0px) {
   #intro {

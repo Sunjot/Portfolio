@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Exo+2|Neucha|PT+Sans:700|Francois+One");
+@import url("https://fonts.googleapis.com/css?family=Exo+2|Neucha|PT+Sans:700|Francois+One|Montserrat");
 html, body {
   width: 100%;
   height: 100%;
-  background-color: white; }
+  background-color: white;
+  overflow-y: hidden; }
 
 #root {
   width: 100%;
@@ -28,7 +29,8 @@ html, body {
   width: 100%;
   height: 75px;
   z-index: 10;
-  color: white; }
+  color: white;
+  transition: background-color 1s; }
   #header #header-link-collect {
     display: flex;
     flex-direction: row;
@@ -44,12 +46,11 @@ html, body {
       cursor: pointer;
       transform: translateY(-50px);
       opacity: 0;
-      transition: color 0.2s;
+      transition: color 0.5s;
       color: white;
-      text-decoration: none;
-      transition: color 0.5s; }
+      text-decoration: none; }
       #header #header-link-collect .header-link:hover {
-        color: #d8a347; }
+        color: #d8a347 !important; }
     #header #header-link-collect #hl1 {
       animation: slideheaders 1s;
       animation-delay: 0s;
@@ -88,7 +89,8 @@ html, body {
   align-items: center;
   width: 100%;
   background-color: #e0dbd2;
-  color: white; }
+  color: white;
+  z-index: 9; }
   #intro #intro-cover {
     width: 100%;
     height: 100vh;
@@ -126,6 +128,28 @@ html, body {
       animation-delay: 0.5s;
       animation-fill-mode: forwards; }
 
+.intro-out {
+  animation: slideout 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards; }
+
+.intro-in {
+  animation: slidein 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards; }
+
+@keyframes slideout {
+  from {
+    transform: translateX(0); }
+  to {
+    transform: translateX(-100%); } }
+
+@keyframes slidein {
+  from {
+    transform: translateX(-100%); }
+  to {
+    transform: translateX(0%); } }
+
 @keyframes fadein {
   from {
     opacity: 0; }
@@ -159,22 +183,47 @@ html, body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: #e8e3dc;
+  background-color: #262627;
   width: 100%;
   padding: 30px;
   box-sizing: border-box;
   margin-top: 75px;
-  height: 700px; }
-  #me .heading {
-    font-size: 35px;
-    font-family: "Francois One";
-    text-transform: uppercase;
-    margin: 0 0 10px 0; }
-  #me .divider {
-    width: 100px;
-    height: 5px;
-    background-color: #d8a347;
-    border-radius: 1px; }
+  height: 700px;
+  position: absolute;
+  z-index: 5;
+  color: white;
+  overflow-y: auto; }
+  #me .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    #me .title .heading {
+      font-size: 35px;
+      font-family: "Francois One";
+      text-transform: uppercase;
+      margin: 0 0 10px 0; }
+    #me .title .divider {
+      height: 5px;
+      background-color: #d8a347;
+      border-radius: 1px; }
+    #me .title #me-act {
+      animation: dividerExpand 1s;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards; }
+  #me .desc {
+    font-size: 20px;
+    margin: 40px 100px 40px 100px;
+    line-height: 1.5;
+    text-align: center;
+    color: #e0e0e0;
+    font-family: "Montserrat"; }
+
+@keyframes dividerExpand {
+  from {
+    width: 0px; }
+  to {
+    width: 100px; } }
 
 @media (min-width: 0px) {
   #intro #intro-cover {

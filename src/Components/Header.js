@@ -6,8 +6,6 @@ class Header extends Component {
 
   constructor() {
     super();
-    this.changeColor = this.changeColor.bind(this);
-    this.checkPath = this.checkPath.bind(this);
 
     this.state = {
       headerColor: 'trp',
@@ -15,7 +13,7 @@ class Header extends Component {
     }
   }
 
-  componentDidMount(){
+  /*componentDidMount(){
     const history = createHistory();
 
     this.checkPath(history.location); // when a page is loaded on address bar enter
@@ -30,35 +28,40 @@ class Header extends Component {
       this.changeColor("0");
     else
       this.changeColor("1");
-  }
+  }*/
 
-  changeColor(e) {
-    if (e === "0") {
-      this.setState({
-        headerColor: "trp",
-        headerLinkColor: "header-link white-link"
-      });
-    }
-    if (e === "1") {
-      this.setState({
-        headerColor: "hdr-colored",
-        headerLinkColor: "header-link black-link"
-      });
-    }
+  changeComp = (code, comp) => {
+
+    this.props.compFunc(comp);
+
+    setTimeout(() => {
+      if (code === "0") {
+        this.setState({
+          headerColor: "trp",
+          headerLinkColor: "header-link white-link"
+        });
+      }
+      if (code === "1") {
+        this.setState({
+          headerColor: "hdr-colored",
+          headerLinkColor: "header-link black-link"
+        });
+      }
+    }, 750);
   }
 
   render() {
     return (
       <div id="header" className={this.state.headerColor}>
         <div id="header-link-collect">
-          <Link id="hl1" className={this.state.headerLinkColor} to="/"
-            onClick={() => this.changeColor("0")}>Home</Link>
-          <Link id="hl2" className={this.state.headerLinkColor} to="/me"
-            onClick={() => this.changeColor("1")}>About Me</Link>
-          <Link id="hl3" className={this.state.headerLinkColor} to="/"
-            onClick={() => this.changeColor("1")}>My Projects</Link>
-          <Link id="hl4" className={this.state.headerLinkColor} to="/"
-            onClick={() => this.changeColor("1")}>Get in Touch</Link>
+          <p id="hl1" className={this.state.headerLinkColor} to="/"
+            onClick={() => this.changeComp("0", "intro")}>Home</p>
+          <p id="hl2" className={this.state.headerLinkColor} to="/me"
+            onClick={() => this.changeComp("1", "me")}>About Me</p>
+          <p id="hl3" className={this.state.headerLinkColor} to="/"
+            onClick={() => this.changeComp("1", "projects")}>My Projects</p>
+          <p id="hl4" className={this.state.headerLinkColor} to="/"
+            onClick={() => this.changeComp("1", "contact")}>Get in Touch</p>
         </div>
         <div id="header-line"/>
       </div>
