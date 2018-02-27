@@ -192,7 +192,7 @@ html, body {
   position: absolute;
   z-index: 5;
   color: white;
-  overflow-y: auto; }
+  top: 0; }
   #me .title {
     display: flex;
     flex-direction: column;
@@ -211,6 +211,10 @@ html, body {
       animation: dividerExpand 1s;
       animation-delay: 0.5s;
       animation-fill-mode: forwards; }
+    #me .title #me-off {
+      animation: dividerCollapse 1s;
+      animation-delay: 0s;
+      animation-fill-mode: forwards; }
   #me .desc {
     font-size: 20px;
     margin: 40px 100px 40px 100px;
@@ -224,6 +228,12 @@ html, body {
     width: 0px; }
   to {
     width: 100px; } }
+
+@keyframes dividerCollapse {
+  from {
+    width: 100px; }
+  to {
+    width: 0px; } }
 
 @media (min-width: 0px) {
   #intro #intro-cover {

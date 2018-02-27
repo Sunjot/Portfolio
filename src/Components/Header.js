@@ -13,23 +13,6 @@ class Header extends Component {
     }
   }
 
-  /*componentDidMount(){
-    const history = createHistory();
-
-    this.checkPath(history.location); // when a page is loaded on address bar enter
-
-    history.listen((location) => { // when a page is loaded through back button
-      this.checkPath(location);
-    });
-  }
-
-  checkPath(p) {
-    if (p.pathname === "/") // when a page is loaded on address bar enter
-      this.changeColor("0");
-    else
-      this.changeColor("1");
-  }*/
-
   changeComp = (code, comp) => {
 
     this.props.compFunc(comp);
@@ -47,7 +30,7 @@ class Header extends Component {
           headerLinkColor: "header-link black-link"
         });
       }
-    }, 750);
+    }, 1000);
   }
 
   render() {

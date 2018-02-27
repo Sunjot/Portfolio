@@ -201,7 +201,7 @@ html, body {
   position: absolute;
   z-index: 5;
   color: white;
-  overflow-y: auto;
+  top: 0;
 
   .title {
     @include flex(column, center, center);
@@ -222,6 +222,10 @@ html, body {
     #me-act {
       @include animate(dividerExpand, 1s, 0.5s, forwards);
     }
+
+    #me-off {
+      @include animate(dividerCollapse, 1s, 0s, forwards);
+    }
   }
 
   .desc {
@@ -239,6 +243,10 @@ html, body {
   to { width: 100px; }
 }
 
+@keyframes dividerCollapse {
+  from { width: 100px; }
+  to { width: 0px; }
+}
 
 // Media queries
 

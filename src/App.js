@@ -22,11 +22,11 @@ class App extends Component {
 
     if (this.state.compChoice === "intro" && c === "me") {
       this.setState({
-        introAnim: "intro-out",
-        meAnim: "me-act"
+        introAnim: "intro-out", // activates animation for leaving intro comp
+        meAnim: "me-act" // activates divider animation for entering me comp
       });
 
-      setTimeout(() => {
+      setTimeout(() => { // delay the render so the intro animation can finish before rending me comp
         this.setState({
           compChoice: c
         });
@@ -34,8 +34,9 @@ class App extends Component {
     }
     if (this.state.compChoice === "me" && c === "intro") {
       this.setState({
-        introAnim: "intro-in",
-        compChoice: c
+        introAnim: "intro-in", // activates animation for entering intro comp
+        compChoice: c, // no delay in rendering bc intro comp has no critical leaving animation
+        meAnim: "me-off" // animation to collapse divider 
       });
     }
   }
