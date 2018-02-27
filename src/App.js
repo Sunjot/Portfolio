@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Stylesheets/App.css';
 import Header from './Components/Header';
 import Intro from './Components/Intro';
-import Me from './Components/Me';
+import Wrapper from './Components/Wrapper';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { CSSTransitionGroup } from 'react-transition-group';
 
@@ -13,17 +13,14 @@ class App extends Component {
 
     this.state = {
       compChoice: "intro",
-      introAnim: "",
-      meAnim: ""
+      introAnim: ""
     };
   }
 
   selectComp = (c) => {
-
-    if (this.state.compChoice === "intro" && c === "me") {
+    if (this.state.compChoice === "intro") {
       this.setState({
-        introAnim: "intro-out", // activates animation for leaving intro comp
-        meAnim: "me-act" // activates divider animation for entering me comp
+        introAnim: "intro-out" // activates animation for leaving intro comp
       });
 
       setTimeout(() => { // delay the render so the intro animation can finish before rending me comp
@@ -32,11 +29,15 @@ class App extends Component {
         });
       }, 1000);
     }
-    if (this.state.compChoice === "me" && c === "intro") {
+    if (c === "intro") {
       this.setState({
         introAnim: "intro-in", // activates animation for entering intro comp
-        compChoice: c, // no delay in rendering bc intro comp has no critical leaving animation
-        meAnim: "me-off" // animation to collapse divider 
+        compChoice: c
+      });
+    }
+    if (c !== "intro" && this.state.compChoice !== "intro") {
+      this.setState({
+        compChoice: c
       });
     }
   }
@@ -48,7 +49,7 @@ class App extends Component {
         { this.state.compChoice === "intro" &&
           <Intro anim={this.state.introAnim}/>
         }
-        <Me activate={this.state.meAnim}/>
+        <Wrapper section={this.state.compChoice}/>
       </div>
     );
   }

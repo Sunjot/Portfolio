@@ -111,6 +111,7 @@ html, body {
   background-color: #e0dbd2;
   color: white;
   z-index: 9;
+  position: absolute;
 
   #intro-cover {
     width: 100%;
@@ -161,7 +162,7 @@ html, body {
 }
 
 @keyframes slideout {
-  from { transform: translateX(0); }
+  from { transform: translateX(0%); }
   to { transform: translateX(-100%); }
 }
 
@@ -188,9 +189,9 @@ html, body {
   100% { color: #d8a347; }
 }
 
-// Me component
+// Wrapper Component
 
-#me {
+#wrapper {
   @include flex(column, flex-start, center);
   background-color: #262627;
   width: 100%;
@@ -202,6 +203,15 @@ html, body {
   z-index: 5;
   color: white;
   top: 0;
+}
+
+// Me component
+
+#me {
+  @include flex(column, flex-start, center);
+  background-color: #262627;
+  width: 100%;
+  @include animate(fadein, 1.5s, 0s, forwards);
 
   .title {
     @include flex(column, center, center);
@@ -217,9 +227,11 @@ html, body {
       height: 5px;
       background-color: #d8a347;
       border-radius: 1px;
+      width: 1px;
+      opacity: 0;
     }
 
-    #me-act {
+    #act-div {
       @include animate(dividerExpand, 1s, 0.5s, forwards);
     }
 
@@ -239,13 +251,28 @@ html, body {
 }
 
 @keyframes dividerExpand {
-  from { width: 0px; }
-  to { width: 100px; }
+  from {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(100);
+    opacity: 1;
+  }
 }
 
 @keyframes dividerCollapse {
-  from { width: 100px; }
-  to { width: 0px; }
+  from { transform: scaleX(100); }
+  to { transform: scaleX(1); }
+}
+
+// Projects component
+
+#projects {
+  @include flex(column, flex-start, center);
+  background-color: #262627;
+  width: 100%;
+  @include animate(fadein, 1.5s, 0s, forwards);
 }
 
 // Media queries

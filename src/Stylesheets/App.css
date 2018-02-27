@@ -90,7 +90,8 @@ html, body {
   width: 100%;
   background-color: #e0dbd2;
   color: white;
-  z-index: 9; }
+  z-index: 9;
+  position: absolute; }
   #intro #intro-cover {
     width: 100%;
     height: 100vh;
@@ -140,7 +141,7 @@ html, body {
 
 @keyframes slideout {
   from {
-    transform: translateX(0); }
+    transform: translateX(0%); }
   to {
     transform: translateX(-100%); } }
 
@@ -178,7 +179,7 @@ html, body {
   100% {
     color: #d8a347; } }
 
-#me {
+#wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -193,6 +194,17 @@ html, body {
   z-index: 5;
   color: white;
   top: 0; }
+
+#me {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #262627;
+  width: 100%;
+  animation: fadein 1.5s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards; }
   #me .title {
     display: flex;
     flex-direction: column;
@@ -206,8 +218,10 @@ html, body {
     #me .title .divider {
       height: 5px;
       background-color: #d8a347;
-      border-radius: 1px; }
-    #me .title #me-act {
+      border-radius: 1px;
+      width: 1px;
+      opacity: 0; }
+    #me .title #act-div {
       animation: dividerExpand 1s;
       animation-delay: 0.5s;
       animation-fill-mode: forwards; }
@@ -225,15 +239,28 @@ html, body {
 
 @keyframes dividerExpand {
   from {
-    width: 0px; }
+    transform: scaleX(1);
+    opacity: 0; }
   to {
-    width: 100px; } }
+    transform: scaleX(100);
+    opacity: 1; } }
 
 @keyframes dividerCollapse {
   from {
-    width: 100px; }
+    transform: scaleX(100); }
   to {
-    width: 0px; } }
+    transform: scaleX(1); } }
+
+#projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #262627;
+  width: 100%;
+  animation: fadein 1.5s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards; }
 
 @media (min-width: 0px) {
   #intro #intro-cover {
