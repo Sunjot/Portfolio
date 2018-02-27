@@ -46,9 +46,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header compFunc={this.selectComp}/>
-        { this.state.compChoice === "intro" &&
-          <Intro anim={this.state.introAnim}/>
-        }
+        <Intro anim={this.state.introAnim}/>
         <Wrapper section={this.state.compChoice}/>
       </div>
     );

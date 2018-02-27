@@ -112,6 +112,8 @@ html, body {
   color: white;
   z-index: 9;
   position: absolute;
+  top: 0;
+  left: 0;
 
   #intro-cover {
     width: 100%;
@@ -162,13 +164,13 @@ html, body {
 }
 
 @keyframes slideout {
-  from { transform: translateX(0%); }
-  to { transform: translateX(-100%); }
+  from {transform: translateX(0%);}
+  to {transform: translateX(-100%);}
 }
 
 @keyframes slidein {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0%); }
+  from {transform: translateX(-100%);}
+  to {transform: translateX(0%);}
 }
 
 @keyframes fadein {
