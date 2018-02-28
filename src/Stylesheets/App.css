@@ -20,7 +20,7 @@ html, body {
   width: 100%; }
 
 #header {
-  position: relative;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -29,7 +29,8 @@ html, body {
   height: 75px;
   color: white;
   transition: background-color 1s;
-  background-color: #f1ece4; }
+  background-color: #f1ece4;
+  z-index: 12; }
   #header #header-link-collect {
     display: flex;
     flex-direction: row;
@@ -91,7 +92,8 @@ html, body {
   background-color: #262627;
   color: white;
   z-index: 12;
-  position: relative; }
+  position: relative;
+  top: 75px; }
   #intro #intro-desc {
     display: flex;
     flex-direction: column;
@@ -105,8 +107,8 @@ html, body {
       font-size: 40px;
       margin: 0 0 10px 0;
       opacity: 0;
-      animation: fadein 1s;
-      animation-delay: 0s;
+      animation: fadein 1.5s;
+      animation-delay: 0.5s;
       animation-fill-mode: forwards; }
       #intro #intro-desc #role span {
         color: #d8a347; }
@@ -116,11 +118,11 @@ html, body {
           animation-delay: 1.5s;
           animation-fill-mode: forwards; }
     #intro #intro-desc #name {
-      font-size: 30px;
+      font-size: 50px;
       margin: 0;
       opacity: 0;
       animation: fadein 1s;
-      animation-delay: 0.5s;
+      animation-delay: 0s;
       animation-fill-mode: forwards; }
 
 @keyframes fadein {
@@ -151,22 +153,6 @@ html, body {
   100% {
     color: #d8a347; } }
 
-#wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: #262627;
-  width: 100%;
-  padding: 30px;
-  box-sizing: border-box;
-  margin-top: 75px;
-  height: 700px;
-  position: absolute;
-  z-index: 5;
-  color: white;
-  top: 0; }
-
 #me-cont {
   display: flex;
   flex-direction: column;
@@ -175,7 +161,10 @@ html, body {
   background-color: #262627;
   width: 100%;
   padding: 40px;
-  min-height: calc(100vh - 75px); }
+  min-height: calc(100vh - 75px);
+  top: 75px;
+  position: relative;
+  box-sizing: border-box; }
   #me-cont #me {
     display: flex;
     flex-direction: column;
