@@ -3,8 +3,6 @@ import './Stylesheets/App.css';
 import Header from './Components/Header';
 import Intro from './Components/Intro';
 import Wrapper from './Components/Wrapper';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { CSSTransitionGroup } from 'react-transition-group';
 
 class App extends Component {
 

@@ -221,7 +221,6 @@ html, body {
       height: 5px;
       background-color: #d8a347;
       border-radius: 1px;
-      width: 1px;
       opacity: 0; }
     #me .title #act-div {
       animation: dividerExpand 1s;
@@ -238,13 +237,50 @@ html, body {
     text-align: center;
     color: #e0e0e0;
     font-family: "Montserrat"; }
+  #me #icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap; }
+    #me #icons #icon-cont {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      animation: slideup 2s;
+      animation-delay: 0s;
+      animation-fill-mode: forwards; }
+      #me #icons #icon-cont i {
+        font-size: 3rem;
+        padding: 11px;
+        transition: transform 0.75s; }
+        #me #icons #icon-cont i:hover {
+          transform: scale(1.1); }
+        #me #icons #icon-cont i:hover + p {
+          opacity: 1; }
+      #me #icons #icon-cont p {
+        font-size: 12px;
+        text-transform: uppercase;
+        font-family: "Exo 2";
+        margin: 0;
+        opacity: 0;
+        transition: opacity 0.5s; }
+
+@keyframes slideup {
+  from {
+    opacity: 0;
+    transform: translateY(30px); }
+  to {
+    opacity: 1;
+    transform: translateY(0px); } }
 
 @keyframes dividerExpand {
   from {
-    transform: scaleX(1);
+    width: 0px;
     opacity: 0; }
   to {
-    transform: scaleX(100);
+    width: 100px;
     opacity: 1; } }
 
 @keyframes dividerCollapse {
