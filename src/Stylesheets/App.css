@@ -2,8 +2,7 @@
 html, body {
   width: 100%;
   height: 100%;
-  background-color: white;
-  overflow-y: hidden; }
+  background-color: white; }
 
 #root {
   width: 100%;
@@ -21,16 +20,16 @@ html, body {
   width: 100%; }
 
 #header {
-  position: fixed;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
   height: 75px;
-  z-index: 10;
   color: white;
-  transition: background-color 1s; }
+  transition: background-color 1s;
+  background-color: #f1ece4; }
   #header #header-link-collect {
     display: flex;
     flex-direction: row;
@@ -47,7 +46,7 @@ html, body {
       transform: translateY(-50px);
       opacity: 0;
       transition: color 0.5s;
-      color: white;
+      color: black;
       text-decoration: none; }
       #header #header-link-collect .header-link:hover {
         color: #d8a347 !important; }
@@ -88,24 +87,17 @@ html, body {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  background-color: #e0dbd2;
+  height: calc(100vh - 75px);
+  background-color: #262627;
   color: white;
-  z-index: 9;
-  position: absolute;
-  top: 0;
-  left: 0; }
-  #intro #intro-cover {
-    width: 100%;
-    height: 100vh;
-    background: url("../Images/cover.jpg") no-repeat top center;
-    background-size: cover;
-    filter: brightness(60%); }
+  z-index: 12;
+  position: relative; }
   #intro #intro-desc {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    top: 300px;
+    top: 200px;
     left: 200px;
     font-family: "PT Sans";
     position: absolute; }
@@ -130,28 +122,6 @@ html, body {
       animation: fadein 1s;
       animation-delay: 0.5s;
       animation-fill-mode: forwards; }
-
-.intro-out {
-  animation: slideout 1s;
-  animation-delay: 0s;
-  animation-fill-mode: forwards; }
-
-.intro-in {
-  animation: slidein 1s;
-  animation-delay: 0s;
-  animation-fill-mode: forwards; }
-
-@keyframes slideout {
-  from {
-    transform: translateX(0%); }
-  to {
-    transform: translateX(-100%); } }
-
-@keyframes slidein {
-  from {
-    transform: translateX(-100%); }
-  to {
-    transform: translateX(0%); } }
 
 @keyframes fadein {
   from {
@@ -197,75 +167,82 @@ html, body {
   color: white;
   top: 0; }
 
-#me {
+#me-cont {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   background-color: #262627;
   width: 100%;
-  animation: fadein 1.5s;
-  animation-delay: 0s;
-  animation-fill-mode: forwards; }
-  #me .title {
+  padding: 40px;
+  min-height: calc(100vh - 75px); }
+  #me-cont #me {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    #me .title .heading {
-      font-size: 35px;
-      font-family: "Francois One";
-      text-transform: uppercase;
-      margin: 0 0 10px 0; }
-    #me .title .divider {
-      height: 5px;
-      background-color: #d8a347;
-      border-radius: 1px;
-      opacity: 0; }
-    #me .title #act-div {
-      animation: dividerExpand 1s;
-      animation-delay: 0.5s;
-      animation-fill-mode: forwards; }
-    #me .title #me-off {
-      animation: dividerCollapse 1s;
-      animation-delay: 0s;
-      animation-fill-mode: forwards; }
-  #me .desc {
-    font-size: 20px;
-    margin: 40px 100px 40px 100px;
-    line-height: 1.5;
-    text-align: center;
-    color: #e0e0e0;
-    font-family: "Montserrat"; }
-  #me #icons {
-    display: flex;
-    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    flex-wrap: wrap; }
-    #me #icons #icon-cont {
+    animation: fadein 1.5s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    opacity: 0; }
+    #me-cont #me .title {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      #me-cont #me .title .heading {
+        font-size: 35px;
+        font-family: "Francois One";
+        text-transform: uppercase;
+        margin: 0 0 10px 0;
+        color: white; }
+      #me-cont #me .title .divider {
+        height: 5px;
+        background-color: #d8a347;
+        border-radius: 1px;
+        opacity: 0; }
+      #me-cont #me .title #act-div {
+        animation: dividerExpand 1s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards; }
+    #me-cont #me .desc {
+      font-size: 20px;
+      margin: 40px 100px 40px 100px;
+      line-height: 1.5;
+      text-align: center;
+      color: #e0e0e0;
+      font-family: "Montserrat"; }
+    #me-cont #me #icons {
+      display: flex;
+      flex-direction: row;
       justify-content: flex-start;
       align-items: center;
-      animation: slideup 2s;
-      animation-delay: 0s;
-      animation-fill-mode: forwards; }
-      #me #icons #icon-cont i {
-        font-size: 3rem;
-        padding: 11px;
-        transition: transform 0.75s; }
-        #me #icons #icon-cont i:hover {
-          transform: scale(1.1); }
-        #me #icons #icon-cont i:hover + p {
-          opacity: 1; }
-      #me #icons #icon-cont p {
-        font-size: 12px;
-        text-transform: uppercase;
-        font-family: "Exo 2";
-        margin: 0;
-        opacity: 0;
-        transition: opacity 0.5s; }
+      flex-wrap: wrap; }
+      #me-cont #me #icons #icon-cont {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        animation: slideup 2s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards; }
+        #me-cont #me #icons #icon-cont i {
+          font-size: 3rem;
+          padding: 11px;
+          transition: transform 0.75s;
+          color: white; }
+          #me-cont #me #icons #icon-cont i:hover {
+            transform: scale(1.1); }
+          #me-cont #me #icons #icon-cont i:hover + p {
+            opacity: 1; }
+        #me-cont #me #icons #icon-cont p {
+          font-size: 12px;
+          text-transform: uppercase;
+          font-family: "Exo 2";
+          margin: 0;
+          opacity: 0;
+          transition: opacity 0.5s;
+          color: white; }
 
 @keyframes slideup {
   from {
@@ -282,12 +259,6 @@ html, body {
   to {
     width: 100px;
     opacity: 1; } }
-
-@keyframes dividerCollapse {
-  from {
-    transform: scaleX(100); }
-  to {
-    transform: scaleX(1); } }
 
 #projects {
   display: flex;

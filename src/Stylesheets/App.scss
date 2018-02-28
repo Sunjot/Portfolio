@@ -22,7 +22,6 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: white;
-  overflow-y: hidden;
 }
 
 #root {
@@ -39,13 +38,13 @@ html, body {
 // Header component
 
 #header{
-  position: fixed;
+  position: relative;
   @include flex(column, flex-start, center);
   width: 100%;
   height: 75px;
-  z-index: 10;
   color: white;
   transition: background-color 1s;
+  background-color: #f1ece4;
 
   #header-link-collect {
     @include flex(row, center, center);
@@ -61,7 +60,7 @@ html, body {
       transform: translateY(-50px);
       opacity: 0;
       transition: color 0.5s;
-      color: white;
+      color: black;
       text-decoration: none;
 
       &:hover {
@@ -108,24 +107,15 @@ html, body {
 #intro {
   @include flex(row, flex-start, center);
   width: 100%;
-  background-color: #e0dbd2;
+  height: calc(100vh - 75px);
+  background-color: #262627;
   color: white;
-  z-index: 9;
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  #intro-cover {
-    width: 100%;
-    height: 100vh;
-    background: url('../Images/cover.jpg') no-repeat top center;
-    background-size: cover;
-    filter: brightness(60%);
-  }
+  z-index: 12;
+  position: relative;
 
   #intro-desc {
     @include flex(column, flex-start, flex-start);
-    top: 300px;
+    top: 200px;
     left: 200px;
     font-family: "PT Sans";
     position: absolute;
@@ -153,24 +143,6 @@ html, body {
       @include animate(fadein, 1s, 0.5s, forwards);
     }
   }
-}
-
-.intro-out {
-  @include animate(slideout, 1s, 0s, forwards);
-}
-
-.intro-in {
-  @include animate(slidein, 1s, 0s, forwards);
-}
-
-@keyframes slideout {
-  from {transform: translateX(0%);}
-  to {transform: translateX(-100%);}
-}
-
-@keyframes slidein {
-  from {transform: translateX(-100%);}
-  to {transform: translateX(0%);}
 }
 
 @keyframes fadein {
@@ -209,76 +181,82 @@ html, body {
 
 // Me component
 
-#me {
+#me-cont {
   @include flex(column, flex-start, center);
   background-color: #262627;
   width: 100%;
-  @include animate(fadein, 1.5s, 0s, forwards);
+  padding: 40px;
+  min-height: calc(100vh - 75px);
 
-  .title {
-    @include flex(column, center, center);
+  #me {
+    @include flex(column, flex-start, center);
+    @include animate(fadein, 1.5s, 0s, forwards);
+    opacity: 0;
 
-    .heading {
-      font-size: 35px;
-      font-family: "Francois One";
-      text-transform: uppercase;
-      margin: 0 0 10px 0;
-    }
+    .title {
+      @include flex(column, center, center);
 
-    .divider {
-      height: 5px;
-      background-color: #d8a347;
-      border-radius: 1px;
-      opacity: 0;
-    }
-
-    #act-div {
-      @include animate(dividerExpand, 1s, 0.5s, forwards);
-    }
-
-    #me-off {
-      @include animate(dividerCollapse, 1s, 0s, forwards);
-    }
-  }
-
-  .desc {
-    font-size: 20px;
-    margin: 40px 100px 40px 100px;
-    line-height: 1.5;
-    text-align: center;
-    color: #e0e0e0;
-    font-family: "Montserrat";
-  }
-
-  #icons {
-    @include flex(row, flex-start, center);
-    flex-wrap: wrap;
-
-    #icon-cont {
-      @include flex(column, flex-start, center);
-      @include animate(slideup, 2s, 0s, forwards);
-
-      i {
-        font-size: 3rem;
-        padding: 11px;
-        transition: transform 0.75s;
-
-        &:hover {
-          transform: scale(1.1);
-        }
-
-        &:hover + p{
-          opacity: 1;
-        }
+      .heading {
+        font-size: 35px;
+        font-family: "Francois One";
+        text-transform: uppercase;
+        margin: 0 0 10px 0;
+        color: white;
       }
 
-      p {
-        font-size: 12px;
-        text-transform: uppercase;
-        font-family: "Exo 2";
-        margin: 0;
+      .divider {
+        height: 5px;
+        background-color: #d8a347;
+        border-radius: 1px;
         opacity: 0;
-        transition: opacity 0.5s;
+      }
+
+      #act-div {
+        @include animate(dividerExpand, 1s, 0.5s, forwards);
+      }
+    }
+
+    .desc {
+      font-size: 20px;
+      margin: 40px 100px 40px 100px;
+      line-height: 1.5;
+      text-align: center;
+      color: #e0e0e0;
+      font-family: "Montserrat";
+    }
+
+    #icons {
+      @include flex(row, flex-start, center);
+      flex-wrap: wrap;
+
+      #icon-cont {
+        @include flex(column, flex-start, center);
+        @include animate(slideup, 2s, 0s, forwards);
+
+        i {
+          font-size: 3rem;
+          padding: 11px;
+          transition: transform 0.75s;
+          color: white;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          &:hover + p{
+            opacity: 1;
+          }
+        }
+
+        p {
+          font-size: 12px;
+          text-transform: uppercase;
+          font-family: "Exo 2";
+          margin: 0;
+          opacity: 0;
+          transition: opacity 0.5s;
+          color: white;
+        }
       }
     }
   }
@@ -306,10 +284,6 @@ html, body {
   }
 }
 
-@keyframes dividerCollapse {
-  from { transform: scaleX(100); }
-  to { transform: scaleX(1); }
-}
 
 // Projects component
 

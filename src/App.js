@@ -2,51 +2,22 @@ import React, { Component } from 'react';
 import './Stylesheets/App.css';
 import Header from './Components/Header';
 import Intro from './Components/Intro';
-import Wrapper from './Components/Wrapper';
+import Me from './Components/Me';
+import Projects from './Components/Projects';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
 
-  constructor() {
-    super();
-
-    this.state = {
-      compChoice: "intro",
-      introAnim: ""
-    };
-  }
-
-  selectComp = (c) => {
-    if (this.state.compChoice === "intro") {
-      this.setState({
-        introAnim: "intro-out" // activates animation for leaving intro comp
-      });
-
-      setTimeout(() => { // delay the render so the intro animation can finish before rending me comp
-        this.setState({
-          compChoice: c
-        });
-      }, 1000);
-    }
-    if (c === "intro") {
-      this.setState({
-        introAnim: "intro-in", // activates animation for entering intro comp
-        compChoice: c
-      });
-    }
-    if (c !== "intro" && this.state.compChoice !== "intro") {
-      this.setState({
-        compChoice: c
-      });
-    }
-  }
-
   render() {
     return (
-      <div className="App">
-        <Header compFunc={this.selectComp}/>
-        <Intro anim={this.state.introAnim}/>
-        <Wrapper section={this.state.compChoice}/>
-      </div>
+      <Router>
+        <div className="App">
+          <Header/>
+          <Route exact path="/" component={Intro}/>
+          <Route exact path="/me" component={Me}/>
+          <Route exact path="/projects" component={Projects}/>
+        </div>
+      </Router>
     );
   }
 }
