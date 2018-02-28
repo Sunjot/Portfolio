@@ -42,8 +42,13 @@ html, body {
     height: 100%;
     text-transform: uppercase; }
     #header #header-link-collect div {
-      margin: 0 50px 0 50px;
-      opacity: 0; }
+      margin: 0 40px 0 40px;
+      opacity: 0;
+      padding: 5px 10px 5px 10px;
+      transition: background-color 0.5s;
+      position: relative; }
+      #header #header-link-collect div .hdr-active {
+        color: #d8a347 !important; }
       #header #header-link-collect div .header-link {
         color: white;
         text-decoration: none;
