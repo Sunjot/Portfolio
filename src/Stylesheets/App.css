@@ -193,15 +193,6 @@ html, body {
         text-transform: uppercase;
         margin: 0 0 10px 0;
         color: white; }
-      #me-cont #me .title .divider {
-        height: 5px;
-        background-color: #d8a347;
-        border-radius: 1px;
-        opacity: 0; }
-      #me-cont #me .title #act-div {
-        animation: dividerExpand 1s;
-        animation-delay: 0.5s;
-        animation-fill-mode: forwards; }
     #me-cont #me .desc {
       font-size: 20px;
       margin: 40px 100px 40px 100px;
@@ -241,6 +232,17 @@ html, body {
           transition: opacity 0.5s;
           color: white; }
 
+.divider {
+  height: 5px;
+  background-color: #d8a347;
+  border-radius: 1px;
+  opacity: 0; }
+
+#act-div {
+  animation: dividerExpand 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards; }
+
 @keyframes slideup {
   from {
     opacity: 0;
@@ -257,16 +259,33 @@ html, body {
     width: 100px;
     opacity: 1; } }
 
-#projects {
+#projects-cont {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   background-color: #262627;
   width: 100%;
-  animation: fadein 1.5s;
-  animation-delay: 0s;
-  animation-fill-mode: forwards; }
+  padding: 40px;
+  min-height: calc(100vh - 75px);
+  top: 75px;
+  position: relative;
+  box-sizing: border-box; }
+  #projects-cont #projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    animation: fadein 1.5s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    opacity: 0; }
+    #projects-cont #projects .heading {
+      font-size: 35px;
+      font-family: "Francois One";
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
+      color: white; }
 
 @media (min-width: 0px) {
   #intro #intro-cover {

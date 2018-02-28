@@ -207,17 +207,6 @@ html, body {
         margin: 0 0 10px 0;
         color: white;
       }
-
-      .divider {
-        height: 5px;
-        background-color: #d8a347;
-        border-radius: 1px;
-        opacity: 0;
-      }
-
-      #act-div {
-        @include animate(dividerExpand, 1s, 0.5s, forwards);
-      }
     }
 
     .desc {
@@ -266,6 +255,17 @@ html, body {
   }
 }
 
+.divider {
+  height: 5px;
+  background-color: #d8a347;
+  border-radius: 1px;
+  opacity: 0;
+}
+
+#act-div {
+  @include animate(dividerExpand, 1s, 0.5s, forwards);
+}
+
 @keyframes slideup {
   from {
     opacity: 0;
@@ -291,13 +291,31 @@ html, body {
 
 // Projects component
 
-#projects {
+#projects-cont {
   @include flex(column, flex-start, center);
   background-color: #262627;
   width: 100%;
-  @include animate(fadein, 1.5s, 0s, forwards);
-}
+  padding: 40px;
+  min-height: calc(100vh - 75px);
+  top: 75px;
+  position: relative;
+  box-sizing: border-box;
 
+  #projects {
+    @include flex(column, flex-start, center);
+    @include animate(fadein, 1.5s, 0s, forwards);
+    opacity: 0;
+
+    .heading {
+      font-size: 35px;
+      font-family: "Francois One";
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
+      color: white;
+    }
+  }
+
+}
 // Media queries
 
 @media (min-width: 0px) {
