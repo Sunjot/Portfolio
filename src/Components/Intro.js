@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ReactSVG from 'react-svg';
+import Name from '../Images/name.svg';
 
 class Intro extends Component {
   render() {
@@ -6,9 +8,13 @@ class Intro extends Component {
       <div id="intro" className={this.props.anim}>
         <div id="intro-cover"></div>
         <div id="intro-desc">
-          <div><p id="name">Hi, I'm Sunjot.</p></div>
-          <div><p id="role">A <span id="span-dev">developer</span> and <span>des<span id="span-des">i</span>gner</span> based in Toronto.</p></div>
-          <div><p id="line"></p></div>
+          <div id="name">
+            <ReactSVG
+                path={Name}
+              />
+          </div>
+          <div><p id="role">A <span id="span-dev">front-end developer</span> based in Toronto.</p></div>
+          <div><p id="line">I build clean and responsive websites with minimalist design in mind.</p></div>
         </div>
       </div>
     );

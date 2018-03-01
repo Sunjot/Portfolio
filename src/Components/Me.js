@@ -18,8 +18,8 @@ class Me extends Component {
             <div id="act-div" className="divider"/>
           </div>
           <p className="desc">I'm a recent graduate who took up programming as a
-          freshman in high school. By the time I went to University, I knew that web development
-          and design was what I wanted to do. While I am more well-versed in front-end development,
+          freshman in high school. By the time I went to University, I knew that building websites
+          was what I wanted to do. While I am more well-versed in front-end development,
           I have dabbled in servers and databases and my goal is to one day become a full-stack developer.
           Below are some of the languages, frameworks, and tools I have utilized in my projects.</p>
           <div id="icons">

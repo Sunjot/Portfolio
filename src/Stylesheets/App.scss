@@ -132,34 +132,79 @@ html, body {
 
   #intro-desc {
     @include flex(column, flex-start, flex-start);
-    top: 200px;
+    top: 150px;
     left: 200px;
     font-family: "PT Sans";
     position: absolute;
 
-    #role {
-      font-size: 40px;
-      margin: 0 0 10px 0;
-      opacity: 0;
-      @include animate(fadein, 1.5s, 0.5s, forwards);
-
-      span {
-        color: #d8a347;
-
-        #span-des {
-          color: white;
-          @include animate(flicker, 1s, 1.5s, forwards);
-        }
-      }
-    }
 
     #name {
       font-size: 50px;
       margin: 0;
       opacity: 0;
       @include animate(fadein, 1.5s, 0s, forwards);
+
+      svg > g > #idot {
+        @include animate(bounce, 1s, 0.1s, forwards);
+        animation-iteration-count: infinite;
+        fill: white;
+      }
+    }
+
+    #role {
+      font-size: 50px;
+      margin: 0 0 10px 0;
+      opacity: 0;
+      @include animate(fadein, 1.5s, 1s, forwards);
+
+      span {
+        color: #d8a347;
+      }
+    }
+
+    #line {
+      @include animate(fadein, 1.5s, 2s, forwards);
+      font-size: 20px;
+      margin: 5px 0 0 0;
+      opacity: 0;
     }
   }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-15px);
+    animation-timing-function: ease-in;
+  }
+  40% {}
+  50% {
+    transform: translateY(-2px);
+    animation-timing-function: ease-out;
+  }
+  55% {
+    transform: translateY(0px);
+    animation-timing-function: ease-in;
+  }
+  65% {
+    transform: translateY(-5px);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateY(-15px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateY(-15px);
+    animation-timing-function: ease-in;
+  }
+
+  /*0% { transform: translateY(0px); }
+  17% { transform: translateY(-15px); }
+  34% { transform: translateY(0px); }
+  51% { transform: translateY(-15px); }
+  68% { transform: translateY(0px); }
+  85% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }*/
 }
 
 @keyframes fadein {
