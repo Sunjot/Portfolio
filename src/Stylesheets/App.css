@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Exo+2|Neucha|PT+Sans:700|Francois+One|Montserrat");
 html, body {
   width: 100%;
-  height: 100%;
   background-color: white; }
 
 #root {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -160,14 +158,7 @@ html, body {
     animation-timing-function: ease-in; }
   100% {
     transform: translateY(-15px);
-    animation-timing-function: ease-in; }
-  /*0% { transform: translateY(0px); }
-  17% { transform: translateY(-15px); }
-  34% { transform: translateY(0px); }
-  51% { transform: translateY(-15px); }
-  68% { transform: translateY(0px); }
-  85% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }*/ }
+    animation-timing-function: ease-in; } }
 
 @keyframes fadein {
   from {
@@ -302,8 +293,8 @@ html, body {
   align-items: center;
   background-color: #262627;
   width: 100%;
-  padding: 40px;
   min-height: calc(100vh - 75px);
+  padding: 40px 40px 150px 40px;
   top: 75px;
   position: relative;
   box-sizing: border-box; }
@@ -322,6 +313,45 @@ html, body {
       text-transform: uppercase;
       margin: 0 0 10px 0;
       color: white; }
+    #projects-cont #projects #tv-cont {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin: 40px 0 0 0;
+      width: 70%;
+      position: relative; }
+      #projects-cont #projects #tv-cont #tv-pic {
+        width: 100%;
+        height: auto;
+        filter: brightness(50%); }
+      #projects-cont #projects #tv-cont #tv-desc {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 80%;
+        color: black;
+        border-radius: 3px;
+        box-sizing: border-box;
+        position: absolute;
+        left: 50%;
+        top: calc(100% - 80px);
+        transform: translateX(-50%);
+        background-color: #efe8de;
+        padding: 20px; }
+        #projects-cont #projects #tv-cont #tv-desc .title {
+          font-family: "Francois One";
+          font-size: 35px;
+          margin: 0; }
+        #projects-cont #projects #tv-cont #tv-desc .desc {
+          font-family: "Montserrat";
+          margin: 0; }
+        #projects-cont #projects #tv-cont #tv-desc #tv-divider {
+          height: 1px;
+          width: 175px;
+          margin: 10px 0 0 0;
+          background-color: white; }
 
 @media (min-width: 0px) {
   #intro #intro-cover {

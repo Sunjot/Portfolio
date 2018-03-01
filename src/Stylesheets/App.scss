@@ -20,13 +20,11 @@
 
 html, body {
   width: 100%;
-  height: 100%;
   background-color: white;
 }
 
 #root {
   width: 100%;
-  height: 100%;
   @include flex(row, center, flex-start);
 }
 
@@ -198,13 +196,6 @@ html, body {
     animation-timing-function: ease-in;
   }
 
-  /*0% { transform: translateY(0px); }
-  17% { transform: translateY(-15px); }
-  34% { transform: translateY(0px); }
-  51% { transform: translateY(-15px); }
-  68% { transform: translateY(0px); }
-  85% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }*/
 }
 
 @keyframes fadein {
@@ -340,8 +331,8 @@ html, body {
   @include flex(column, flex-start, center);
   background-color: #262627;
   width: 100%;
-  padding: 40px;
   min-height: calc(100vh - 75px);
+  padding: 40px 40px 150px 40px;
   top: 75px;
   position: relative;
   box-sizing: border-box;
@@ -357,6 +348,52 @@ html, body {
       text-transform: uppercase;
       margin: 0 0 10px 0;
       color: white;
+    }
+
+    #tv-cont {
+      @include flex(row, flex-start, flex-start);
+      margin: 40px 0 0 0;
+      width: 70%;
+      position: relative;
+
+      #tv-pic {
+        width: 100%;
+        height: auto;
+        filter: brightness(50%);
+      }
+
+      #tv-desc {
+        @include flex(column, flex-start, flex-start);
+        width: 80%;
+        color: black;
+        border-radius: 3px;
+        box-sizing: border-box;
+        position: absolute;
+        left: 50%;
+        top: calc(100% - 80px);
+        transform: translateX(-50%);
+        background-color: #efe8de;
+        padding: 20px;
+
+
+        .title {
+          font-family: "Francois One";
+          font-size: 35px;
+          margin: 0;
+        }
+
+        .desc {
+          font-family: "Montserrat";
+          margin: 0;
+        }
+
+        #tv-divider {
+          height: 1px;
+          width: 175px;
+          margin: 10px 0 0 0;
+          background-color: white;
+        }
+      }
     }
   }
 
