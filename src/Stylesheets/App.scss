@@ -332,7 +332,7 @@ html, body {
   background-color: #262627;
   width: 100%;
   min-height: calc(100vh - 75px);
-  padding: 40px 40px 150px 40px;
+  padding: 40px 40px 200px 40px;
   top: 75px;
   position: relative;
   box-sizing: border-box;
@@ -350,19 +350,21 @@ html, body {
       color: white;
     }
 
-    #tv-cont {
+    .proj-cont {
       @include flex(row, flex-start, flex-start);
+      @include animate(slideup, 2s, 0s, forwards);
       margin: 40px 0 0 0;
       width: 70%;
       position: relative;
+      opacity: 0;
 
-      #tv-pic {
+      .proj-pic {
         width: 100%;
         height: auto;
         filter: brightness(50%);
       }
 
-      #tv-desc {
+      .desc-cont {
         @include flex(column, flex-start, flex-start);
         width: 80%;
         color: black;
@@ -370,10 +372,10 @@ html, body {
         box-sizing: border-box;
         position: absolute;
         left: 50%;
-        top: calc(100% - 80px);
+        top: calc(100% - 50px);
         transform: translateX(-50%);
         background-color: #efe8de;
-        padding: 20px;
+        padding: 30px;
 
 
         .title {
@@ -386,14 +388,11 @@ html, body {
           font-family: "Montserrat";
           margin: 0;
         }
-
-        #tv-divider {
-          height: 1px;
-          width: 175px;
-          margin: 10px 0 0 0;
-          background-color: white;
-        }
       }
+    }
+
+    #got-cont {
+      margin: 200px 0 0 0;
     }
   }
 

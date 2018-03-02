@@ -294,7 +294,7 @@ html, body {
   background-color: #262627;
   width: 100%;
   min-height: calc(100vh - 75px);
-  padding: 40px 40px 150px 40px;
+  padding: 40px 40px 200px 40px;
   top: 75px;
   position: relative;
   box-sizing: border-box; }
@@ -313,19 +313,23 @@ html, body {
       text-transform: uppercase;
       margin: 0 0 10px 0;
       color: white; }
-    #projects-cont #projects #tv-cont {
+    #projects-cont #projects .proj-cont {
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
       align-items: flex-start;
+      animation: slideup 2s;
+      animation-delay: 0s;
+      animation-fill-mode: forwards;
       margin: 40px 0 0 0;
       width: 70%;
-      position: relative; }
-      #projects-cont #projects #tv-cont #tv-pic {
+      position: relative;
+      opacity: 0; }
+      #projects-cont #projects .proj-cont .proj-pic {
         width: 100%;
         height: auto;
         filter: brightness(50%); }
-      #projects-cont #projects #tv-cont #tv-desc {
+      #projects-cont #projects .proj-cont .desc-cont {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -336,22 +340,19 @@ html, body {
         box-sizing: border-box;
         position: absolute;
         left: 50%;
-        top: calc(100% - 80px);
+        top: calc(100% - 50px);
         transform: translateX(-50%);
         background-color: #efe8de;
-        padding: 20px; }
-        #projects-cont #projects #tv-cont #tv-desc .title {
+        padding: 30px; }
+        #projects-cont #projects .proj-cont .desc-cont .title {
           font-family: "Francois One";
           font-size: 35px;
           margin: 0; }
-        #projects-cont #projects #tv-cont #tv-desc .desc {
+        #projects-cont #projects .proj-cont .desc-cont .desc {
           font-family: "Montserrat";
           margin: 0; }
-        #projects-cont #projects #tv-cont #tv-desc #tv-divider {
-          height: 1px;
-          width: 175px;
-          margin: 10px 0 0 0;
-          background-color: white; }
+    #projects-cont #projects #got-cont {
+      margin: 200px 0 0 0; }
 
 @media (min-width: 0px) {
   #intro #intro-cover {
