@@ -79,7 +79,7 @@ class Header extends Component {
             <Link to="/projects" onClick={() => this.buttonClick("projects")} id="hl3-a" className={this.state.proj} key="hl1">Projects</Link>
           </div>
           <div id="hl4">
-            <Link to="/contact" onClick={() => this.buttonClick("contact")} id="hl4-a" className={this.state.cn} key="hl1">Get in Touch</Link>
+            <Link to="/contact" onClick={() => this.buttonClick("contact")} id="hl4-a" className={this.state.cn} key="hl1">Contact</Link>
           </div>
         </div>
         <div id="header-line"/>

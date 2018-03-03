@@ -373,10 +373,10 @@ html, body {
       }
 
       .tv-in {
-        @include animate(tv-in, 2s, 0s, forwards);
+        @include animate(tv-in, 1.5s, 0s, forwards);
       }
       .got-in {
-        @include animate(got-in, 2s, 0s, forwards);
+        @include animate(got-in, 1.5s, 0s, forwards);
       }
 
       .tv-out {
@@ -477,6 +477,108 @@ html, body {
   to {
     transform: translateX(25%);
     opacity: 0;
+  }
+}
+
+// Contact component
+
+#contact-cont {
+  @include flex(column, flex-start, center);
+  background-color: #262627;
+  width: 100%;
+  min-height: calc(100vh - 75px);
+  padding: 40px 40px 200px 40px;
+  top: 75px;
+  position: relative;
+  box-sizing: border-box;
+
+  #contact {
+    @include flex(column, flex-start, center);
+    @include animate(fadein, 1s, 0s, forwards);
+    width: 100%;
+    opacity: 0;
+
+    .heading {
+      font-size: 35px;
+      font-family: "Francois One";
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
+      color: white;
+    }
+
+    .desc {
+      font-size: 19px;
+      font-family: "Montserrat";
+      margin: 20px 0 0 0;
+      color: white;
+    }
+
+    #contact-form {
+      @include flex(column, flex-start, flex-start);
+      border: 1px solid white;
+      width: 50%;
+      position: relative;
+      margin: 50px 0 0 0;
+
+      .input-field {
+        width: 100%;
+        background-color: #262627;
+        color: white;
+        border: none;
+        padding: 5px;
+        font-size: 17px;
+        font-family: "Montserrat";
+        box-sizing: border-box;
+
+        &:focus {
+          outline: 0;
+        }
+
+        &::placeholder {
+          color: #adadad;
+        }
+      }
+
+      input:-webkit-autofill,
+      textarea:-webkit-autofill,
+      select:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px #2c2c2d inset;
+        -webkit-text-fill-color: white !important;
+      }
+
+      #name {
+        height: 50px;
+        border-bottom: 1px solid white;
+      }
+
+      #email {
+        height: 50px;
+        border-bottom: 1px solid white;
+      }
+
+      #message {
+        height: 150px;
+        resize: none;
+      }
+
+      #form-button {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin: 10px 0 0 0;
+        padding: 8px;
+        font-family: "Montserrat";
+        font-size: 15px;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.5s;
+
+        &:hover {
+          background-color: #37373a;
+        }
+      }
+    }
   }
 }
 

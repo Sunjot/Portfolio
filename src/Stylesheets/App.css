@@ -335,11 +335,11 @@ html, body {
         #projects-cont #projects #pic-list img:hover {
           filter: brightness(50%); }
       #projects-cont #projects #pic-list .tv-in {
-        animation: tv-in 2s;
+        animation: tv-in 1.5s;
         animation-delay: 0s;
         animation-fill-mode: forwards; }
       #projects-cont #projects #pic-list .got-in {
-        animation: got-in 2s;
+        animation: got-in 1.5s;
         animation-delay: 0s;
         animation-fill-mode: forwards; }
       #projects-cont #projects #pic-list .tv-out {
@@ -421,6 +421,90 @@ html, body {
   to {
     transform: translateX(25%);
     opacity: 0; } }
+
+#contact-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #262627;
+  width: 100%;
+  min-height: calc(100vh - 75px);
+  padding: 40px 40px 200px 40px;
+  top: 75px;
+  position: relative;
+  box-sizing: border-box; }
+  #contact-cont #contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    animation: fadein 1s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    width: 100%;
+    opacity: 0; }
+    #contact-cont #contact .heading {
+      font-size: 35px;
+      font-family: "Francois One";
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
+      color: white; }
+    #contact-cont #contact .desc {
+      font-size: 19px;
+      font-family: "Montserrat";
+      margin: 20px 0 0 0;
+      color: white; }
+    #contact-cont #contact #contact-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      border: 1px solid white;
+      width: 50%;
+      position: relative;
+      margin: 50px 0 0 0; }
+      #contact-cont #contact #contact-form .input-field {
+        width: 100%;
+        background-color: #262627;
+        color: white;
+        border: none;
+        padding: 5px;
+        font-size: 17px;
+        font-family: "Montserrat";
+        box-sizing: border-box; }
+        #contact-cont #contact #contact-form .input-field:focus {
+          outline: 0; }
+        #contact-cont #contact #contact-form .input-field::placeholder {
+          color: #adadad; }
+      #contact-cont #contact #contact-form input:-webkit-autofill,
+      #contact-cont #contact #contact-form textarea:-webkit-autofill,
+      #contact-cont #contact #contact-form select:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px #2c2c2d inset;
+        -webkit-text-fill-color: white !important; }
+      #contact-cont #contact #contact-form #name {
+        height: 50px;
+        border-bottom: 1px solid white; }
+      #contact-cont #contact #contact-form #email {
+        height: 50px;
+        border-bottom: 1px solid white; }
+      #contact-cont #contact #contact-form #message {
+        height: 150px;
+        resize: none; }
+      #contact-cont #contact #contact-form #form-button {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin: 10px 0 0 0;
+        padding: 8px;
+        font-family: "Montserrat";
+        font-size: 15px;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.5s; }
+        #contact-cont #contact #contact-form #form-button:hover {
+          background-color: #37373a; }
 
 @media (min-width: 0px) {
   #intro #intro-cover {
