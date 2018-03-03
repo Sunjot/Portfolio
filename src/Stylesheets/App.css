@@ -313,46 +313,90 @@ html, body {
       text-transform: uppercase;
       margin: 0 0 10px 0;
       color: white; }
-    #projects-cont #projects .proj-cont {
+    #projects-cont #projects #pic-list {
       display: flex;
       flex-direction: row;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: flex-start;
-      animation: slideup 2s;
+      margin: 40px 0 0 0; }
+      #projects-cont #projects #pic-list img {
+        height: 26vw;
+        margin: 10px 10px 0 10px;
+        cursor: pointer;
+        transition: filter 0.5s;
+        position: relative;
+        opacity: 0; }
+        #projects-cont #projects #pic-list img:hover {
+          filter: brightness(50%); }
+      #projects-cont #projects #pic-list .proj-in-left {
+        animation: proj-in-left 2s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards; }
+      #projects-cont #projects #pic-list .proj-in-right {
+        animation: proj-in-right 2s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards; }
+      #projects-cont #projects #pic-list .proj-out-left {
+        animation: proj-out-left 1s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards; }
+      #projects-cont #projects #pic-list .proj-out-right {
+        animation: proj-out-right 1s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards; }
+    #projects-cont #projects .proj-cont {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      animation: fadein 1s;
       animation-delay: 0s;
       animation-fill-mode: forwards;
       margin: 40px 0 0 0;
-      width: 70%;
-      position: relative;
-      opacity: 0; }
-      #projects-cont #projects .proj-cont .proj-pic {
-        width: 100%;
-        height: auto;
-        filter: brightness(50%); }
-      #projects-cont #projects .proj-cont .desc-cont {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        width: 80%;
-        color: black;
-        border-radius: 3px;
-        box-sizing: border-box;
-        position: absolute;
-        left: 50%;
-        top: calc(100% - 50px);
-        transform: translateX(-50%);
-        background-color: #efe8de;
-        padding: 30px; }
-        #projects-cont #projects .proj-cont .desc-cont .title {
-          font-family: "Francois One";
-          font-size: 35px;
-          margin: 0; }
-        #projects-cont #projects .proj-cont .desc-cont .desc {
-          font-family: "Montserrat";
-          margin: 0; }
-    #projects-cont #projects #got-cont {
-      margin: 200px 0 0 0; }
+      width: 60%; }
+      #projects-cont #projects .proj-cont .heading {
+        font-size: 25px;
+        font-family: "Montserrat";
+        text-transform: uppercase;
+        margin: 0 0 10px 0;
+        color: white; }
+      #projects-cont #projects .proj-cont .desc {
+        font-family: "Montserrat";
+        color: white;
+        font-size: 17px;
+        text-align: center; }
+
+@keyframes proj-in-left {
+  from {
+    transform: translateX(-25%);
+    opacity: 0; }
+  to {
+    transform: translateX(0%);
+    opacity: 1; } }
+
+@keyframes proj-in-right {
+  from {
+    transform: translateX(25%);
+    opacity: 0; }
+  to {
+    transform: translateX(0%);
+    opacity: 1; } }
+
+@keyframes proj-out-left {
+  from {
+    transform: translateX(0%);
+    opacity: 1; }
+  to {
+    transform: translateX(-25%);
+    opacity: 0; } }
+
+@keyframes proj-out-right {
+  from {
+    transform: translateX(0%);
+    opacity: 1; }
+  to {
+    transform: translateX(25%);
+    opacity: 0; } }
 
 @media (min-width: 0px) {
   #intro #intro-cover {

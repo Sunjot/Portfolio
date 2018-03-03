@@ -350,53 +350,108 @@ html, body {
       color: white;
     }
 
-    .proj-cont {
-      @include flex(row, flex-start, flex-start);
-      @include animate(slideup, 2s, 0s, forwards);
+    #pic-list {
+      @include flex(row, center, flex-start);
       margin: 40px 0 0 0;
-      width: 70%;
-      position: relative;
-      opacity: 0;
 
-      .proj-pic {
-        width: 100%;
-        height: auto;
-        filter: brightness(50%);
+      img {
+        height: 26vw;
+        margin: 10px 10px 0 10px;
+        cursor: pointer;
+        transition: filter 0.5s;
+        position: relative;
+        opacity: 0;
+
+        &:hover {
+          filter: brightness(50%);
+        }
       }
 
-      .desc-cont {
-        @include flex(column, flex-start, flex-start);
-        width: 80%;
-        color: black;
-        border-radius: 3px;
-        box-sizing: border-box;
-        position: absolute;
-        left: 50%;
-        top: calc(100% - 50px);
-        transform: translateX(-50%);
-        background-color: #efe8de;
-        padding: 30px;
+      .proj-in-left {
+        @include animate(proj-in-left, 2s, 0s, forwards);
+      }
+      .proj-in-right {
+        @include animate(proj-in-right, 2s, 0s, forwards);
+      }
 
-
-        .title {
-          font-family: "Francois One";
-          font-size: 35px;
-          margin: 0;
-        }
-
-        .desc {
-          font-family: "Montserrat";
-          margin: 0;
-        }
+      .proj-out-left {
+        @include animate(proj-out-left, 1s, 0s, forwards);
+      }
+      .proj-out-right {
+        @include animate(proj-out-right, 1s, 0s, forwards);
       }
     }
 
-    #got-cont {
-      margin: 200px 0 0 0;
+    .proj-cont {
+      @include flex(column, flex-start, center);
+      @include animate(fadein, 1s, 0s, forwards);
+      margin: 40px 0 0 0;
+      width: 60%;
+
+      .heading {
+        font-size: 25px;
+        font-family: "Montserrat";
+        text-transform: uppercase;
+        margin: 0 0 10px 0;
+        color: white;
+      }
+
+      .desc {
+        font-family: "Montserrat";
+        color: white;
+        font-size: 17px;
+        text-align: center;
+      }
     }
+
   }
 
 }
+
+@keyframes proj-in-left {
+  from {
+    transform: translateX(-25%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes proj-in-right {
+  from {
+    transform: translateX(25%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes proj-out-left {
+  from {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-25%);
+    opacity: 0;
+  }
+}
+
+@keyframes proj-out-right {
+  from {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(25%);
+    opacity: 0;
+  }
+}
+
 // Media queries
 
 @media (min-width: 0px) {
