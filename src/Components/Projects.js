@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Tv from '../Images/tv.jpg';
 import Got from '../Images/therealm.jpg';
-import { ExternalLink } from 'react-feather';
-import { ArrowLeftCircle } from 'react-feather';
+import ProjSection from './ProjSection';
 
 class Projects extends Component {
 
@@ -55,6 +54,24 @@ class Projects extends Component {
   }
 
   render() {
+
+    let tv = {
+      name: "Tv Tracker",
+      desc: `A website that allows you to build a collection of your past
+        and presently watched TV shows. Discover new series based on what you've seen already
+        and keep tabs on what is scheduled to be on-air in the coming week. Dynamic website
+        built using Ruby on Rails and powered by The Movie DB.`,
+      link: "https://tv.imalwayssunny.xyz"
+    };
+
+    let got = {
+      name: "The Realm",
+      desc: `A website that serves as a simplified introduction to the series, 'Game of Thrones'.
+        Review the important locations, social rankings, big-time players, and the events prior to
+        the show that set up the current state in the series. Static website built using React JS.`,
+      link: "https://therealm.imalwayssunny.xyz"
+    };
+
     return (
       <div id="projects-cont">
         <div id="projects">
@@ -67,26 +84,10 @@ class Projects extends Component {
             </div>
           }
           {this.state.selectedProj === "tv" &&
-            <div id={this.state.projAnim} className="proj-cont">
-              <div className="heading-cont">
-                <p className="heading">Tv Tracker</p>
-                <a target="_blank" rel="noopener noreferrer" href="https://tv.imalwayssunny.xyz">
-                  <ExternalLink className="feather-icon" color="white" size={28} />
-                </a>
-              </div>
-              <p className="desc">A website that allows you to build a collection of your past
-                and presently watched TV shows. Discover new series based on what you've seen already
-                and keep tabs on what is scheduled to be on-air in the coming week. Built using Ruby
-                on Rails and powered by The Movie DB.
-              </p>
-              <ArrowLeftCircle onClick={() => this.backClick()} id="arrow-icon" className="feather-icon" color="white" size={35} />
-            </div>
+            <ProjSection anim={this.state.projAnim} func={this.backClick} content={tv}/>
           }
           {this.state.selectedProj === "got" &&
-            <div id={this.state.projAnim} className="proj-cont">
-              <p className="heading">The Realm</p>
-              <p className="desc"></p>
-            </div>
+            <ProjSection anim={this.state.projAnim} func={this.backClick} content={got} />
           }
         </div>
       </div>
