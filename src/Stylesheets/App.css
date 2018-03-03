@@ -113,8 +113,8 @@ html, body {
       font-size: 50px;
       margin: 0;
       opacity: 0;
-      animation: fadein 1.5s;
-      animation-delay: 0s;
+      animation: fadein 2.5s;
+      animation-delay: 0.5s;
       animation-fill-mode: forwards; }
       #intro #intro-desc #name svg > g > #idot {
         animation: bounce 1s;
@@ -126,14 +126,14 @@ html, body {
       font-size: 50px;
       margin: 0 0 10px 0;
       opacity: 0;
-      animation: fadein 1.5s;
-      animation-delay: 1s;
+      animation: fadein 2.5s;
+      animation-delay: 0.5s;
       animation-fill-mode: forwards; }
       #intro #intro-desc #role span {
         color: #d8a347; }
     #intro #intro-desc #line {
       animation: fadein 1.5s;
-      animation-delay: 2s;
+      animation-delay: 1.5s;
       animation-fill-mode: forwards;
       font-size: 20px;
       margin: 5px 0 0 0;
