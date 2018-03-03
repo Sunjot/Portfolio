@@ -203,6 +203,11 @@ html, body {
   to { opacity: 1; }
 }
 
+@keyframes fadeout {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
 @keyframes flicker {
   0% { color: #161616; }
   10% { color: #d8a347; }
@@ -367,48 +372,71 @@ html, body {
         }
       }
 
-      .proj-in-left {
-        @include animate(proj-in-left, 2s, 0s, forwards);
+      .tv-in {
+        @include animate(tv-in, 2s, 0s, forwards);
       }
-      .proj-in-right {
-        @include animate(proj-in-right, 2s, 0s, forwards);
+      .got-in {
+        @include animate(got-in, 2s, 0s, forwards);
       }
 
-      .proj-out-left {
-        @include animate(proj-out-left, 1s, 0s, forwards);
+      .tv-out {
+        @include animate(tv-out, 1s, 0s, forwards);
       }
-      .proj-out-right {
-        @include animate(proj-out-right, 1s, 0s, forwards);
+      .got-out {
+        @include animate(got-out, 1s, 0s, forwards);
       }
     }
 
     .proj-cont {
       @include flex(column, flex-start, center);
-      @include animate(fadein, 1s, 0s, forwards);
       margin: 40px 0 0 0;
       width: 60%;
 
-      .heading {
-        font-size: 25px;
-        font-family: "Montserrat";
-        text-transform: uppercase;
-        margin: 0 0 10px 0;
-        color: white;
+      .heading-cont {
+        @include flex(row, flex-start, flex-end);
+
+        .heading {
+          font-size: 25px;
+          font-family: "Montserrat";
+          text-transform: uppercase;
+          margin: 0;
+          color: white;
+        }
       }
 
       .desc {
         font-family: "Montserrat";
         color: white;
-        font-size: 17px;
+        font-size: 19px;
         text-align: center;
+      }
+
+      .feather-icon {
+        margin: 0 0 0 10px;
+        cursor: pointer;
+        transition: stroke 0.35s;
+
+        &:hover {
+          stroke: #c19749;
+        }
+      }
+
+      #arrow-icon {
+        margin: 0;
       }
     }
 
-  }
+    #proj-in {
+      @include animate(fadein, 0.5s, 0s, forwards);
+    }
 
+    #proj-out {
+      @include animate(fadeout, 0.5s, 0s, forwards);
+    }
+  }
 }
 
-@keyframes proj-in-left {
+@keyframes tv-in {
   from {
     transform: translateX(-25%);
     opacity: 0;
@@ -419,7 +447,7 @@ html, body {
   }
 }
 
-@keyframes proj-in-right {
+@keyframes got-in {
   from {
     transform: translateX(25%);
     opacity: 0;
@@ -430,7 +458,7 @@ html, body {
   }
 }
 
-@keyframes proj-out-left {
+@keyframes tv-out {
   from {
     transform: translateX(0%);
     opacity: 1;
@@ -441,7 +469,7 @@ html, body {
   }
 }
 
-@keyframes proj-out-right {
+@keyframes got-out {
   from {
     transform: translateX(0%);
     opacity: 1;
