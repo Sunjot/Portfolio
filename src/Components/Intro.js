@@ -6,7 +6,6 @@ class Intro extends Component {
   render() {
     return (
       <div id="intro" className={this.props.anim}>
-        <div id="intro-cover"></div>
         <div id="intro-desc">
           <div id="name"> <ReactSVG path={Name}/></div>
           <div><p id="role">A <span id="span-dev">front-end developer</span> based in Toronto.</p></div>

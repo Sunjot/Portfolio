@@ -120,21 +120,13 @@ html, body {
   position: relative;
   top: 75px;
 
-  /*#intro-cover {
-    width: 100%;
-    height: calc(100vh - 75px);
-    background: url('../Images/cover.jpg') no-repeat top center;
-    background-size: cover;
-    filter: brightness(60%);
-  }*/
-
   #intro-desc {
     @include flex(column, flex-start, flex-start);
     top: 150px;
     left: 200px;
     font-family: "PT Sans";
     position: absolute;
-
+    margin-right: 50px;
 
     #name {
       font-size: 50px;
@@ -208,19 +200,6 @@ html, body {
   to { opacity: 0; }
 }
 
-@keyframes flicker {
-  0% { color: #161616; }
-  10% { color: #d8a347; }
-  20% { color: #161616; }
-  25% { color: #d8a347; }
-  40% { color: #161616; }
-  50% { color: #d8a347; }
-  55% { color: #161616; }
-  70% { color: #d8a347; }
-  80% { color: #161616; }
-  100% { color: #d8a347; }
-}
-
 // Me component
 
 #me-cont {
@@ -260,7 +239,7 @@ html, body {
     }
 
     #icons {
-      @include flex(row, flex-start, center);
+      @include flex(row, center, center);
       flex-wrap: wrap;
 
       #icon-cont {
@@ -529,14 +508,17 @@ html, body {
         font-size: 17px;
         font-family: "Montserrat";
         box-sizing: border-box;
+        transition: background-color 0.5s;
 
         &:focus {
           outline: 0;
+          background-color: #313133;
         }
 
         &::placeholder {
           color: #adadad;
         }
+
       }
 
       input:-webkit-autofill,
@@ -566,7 +548,7 @@ html, body {
         top: 100%;
         left: 0;
         margin: 10px 0 0 0;
-        padding: 8px;
+        padding: 8px 15px 8px 15px;
         font-family: "Montserrat";
         font-size: 15px;
         background-color: transparent;
@@ -584,20 +566,302 @@ html, body {
 
 // Media queries
 
-@media (min-width: 0px) {
+@media (min-width: 300px) {
+
+  // header comp
+  #header{
+
+    #header-link-collect {
+      font-size: 12px;
+
+      div {
+        margin: 0 10px 0 10px;
+      }
+    }
+  }
+
+  // intro comp
   #intro {
-    #intro-cover {
-      background: url('../Images/cover-small.jpg') no-repeat top center;
-      background-size: cover;
+
+    #intro-desc {
+      top: 100px;
+      left: 50px;
+
+      #name {
+        font-size: 27px;
+
+        svg {
+          width: 200px;
+          height: auto;
+        }
+      }
+
+      #role {
+        font-size: 27px;
+      }
+
+      #line {
+        font-size: 15px;
+      }
+    }
+  }
+
+  // Me comp
+  #me-cont {
+    padding: 20px;
+
+    #me {
+      .title {
+
+        .heading {
+          font-size: 20px;
+        }
+      }
+
+      .desc {
+        font-size: 14px;
+        margin: 40px 30px 40px 30px;
+      }
+
+      #icons {
+
+        #icon-cont {
+
+          i {
+            font-size: 1.5rem;
+          }
+
+          p {
+            font-size: 8px;
+          }
+        }
+      }
     }
   }
 }
 
-@media (min-width: 1281px) {
-  #intro {
-    #intro-cover {
-      background: url('../Images/cover.jpg') no-repeat top center;
-      background-size: cover;
+@media (min-width: 525px) {
+
+  // header comp
+  #header{
+
+    #header-link-collect {
+      font-size: 15px;
+
+      div {
+        margin: 0 20px 0 20px;
+      }
     }
   }
+
+  // intro comp
+  #intro {
+
+    #intro-desc {
+      top: 125px;
+      left: 75px;
+
+      #name {
+        font-size: 35px;
+
+        svg {
+          width: 250px;
+          height: auto;
+        }
+      }
+
+      #role {
+        font-size: 35px;
+      }
+
+      #line {
+        font-size: 17px;
+      }
+    }
+  }
+
+  // Me comp
+  #me-cont {
+    padding: 30px;
+
+    #me {
+      .title {
+
+        .heading {
+          font-size: 25px;
+        }
+      }
+
+      .desc {
+        font-size: 16px;
+        margin: 40px 50px 40px 50px;
+      }
+
+      #icons {
+
+        #icon-cont {
+
+          i {
+            font-size: 2rem;
+          }
+
+          p {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+  // header comp
+  #header{
+
+    #header-link-collect {
+      font-size: 17px;
+
+      div {
+        margin: 0 35px 0 35px;
+      }
+    }
+  }
+
+  // intro comp
+  #intro {
+
+    #intro-desc {
+      top: 125px;
+      left: 125px;
+
+      #name {
+        font-size: 37px;
+
+        svg {
+          width: 300px;
+          height: auto;
+        }
+      }
+
+      #role {
+        font-size: 37px;
+      }
+
+      #line {
+        font-size: 19px;
+      }
+    }
+  }
+
+  // Me comp
+  #me-cont {
+    padding: 35px;
+
+    #me {
+      .title {
+
+        .heading {
+          font-size: 30px;
+        }
+      }
+
+      .desc {
+        font-size: 18px;
+        margin: 40px 70px 40px 70px;
+      }
+
+      #icons {
+
+        #icon-cont {
+
+          i {
+            font-size: 2.5rem;
+          }
+
+          p {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+
+  // header comp
+  #header{
+
+    #header-link-collect {
+      font-size: 20px;
+
+      div {
+        margin: 0 40px 0 40px;
+      }
+    }
+  }
+
+  // intro comp
+  #intro {
+
+    #intro-desc {
+      top: 150px;
+      left: 200px;
+
+      #name {
+        font-size: 40px;
+
+        svg {
+          width: 320px;
+          height: auto;
+        }
+      }
+
+      #role {
+        font-size: 40px;
+      }
+
+      #line {
+        font-size: 20px;
+      }
+    }
+  }
+
+  // Me comp
+  #me-cont {
+    padding: 40px;
+
+    #me {
+      .title {
+
+        .heading {
+          font-size: 35px;
+        }
+      }
+
+      .desc {
+        font-size: 20px;
+        margin: 40px 100px 40px 100px;
+      }
+
+      #icons {
+
+        #icon-cont {
+
+          i {
+            font-size: 3rem;
+          }
+
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+
 }
