@@ -433,7 +433,7 @@ html, body {
       justify-content: flex-start;
       align-items: flex-start;
       border: 1px solid white;
-      width: 50%;
+      width: 60%;
       position: relative;
       margin: 50px 0 0 0; }
       #contact-cont #contact #contact-form .input-field {
@@ -544,7 +544,15 @@ html, body {
         font-size: 14px; }
       #projects-cont #projects .proj-cont .feather-icon {
         width: 22px;
-        height: 22px; } }
+        height: 22px; }
+  #contact-cont {
+    padding: 40px 10px 200px 10px; }
+    #contact-cont #contact .heading {
+      font-size: 20px; }
+    #contact-cont #contact .desc {
+      font-size: 15px; }
+    #contact-cont #contact #contact-form {
+      width: 90%; } }
 
 @media (min-width: 525px) {
   #header #header-link-collect {
@@ -610,7 +618,15 @@ html, body {
         font-size: 16px; }
       #projects-cont #projects .proj-cont .feather-icon {
         width: 24px;
-        height: 24px; } }
+        height: 24px; }
+  #contact-cont {
+    padding: 40px 20px 200px 20px; }
+    #contact-cont #contact .heading {
+      font-size: 25px; }
+    #contact-cont #contact .desc {
+      font-size: 17px; }
+    #contact-cont #contact #contact-form {
+      width: 85%; } }
 
 @media (min-width: 768px) {
   #header #header-link-collect {
@@ -654,7 +670,15 @@ html, body {
         font-size: 18px; }
       #projects-cont #projects .proj-cont .feather-icon {
         width: 26px;
-        height: 26px; } }
+        height: 26px; }
+  #contact-cont {
+    padding: 40px 30px 200px 30px; }
+    #contact-cont #contact .heading {
+      font-size: 30px; }
+    #contact-cont #contact .desc {
+      font-size: 18px; }
+    #contact-cont #contact #contact-form {
+      width: 70%; } }
 
 @media (min-width: 1000px) {
   #header #header-link-collect {
@@ -698,4 +722,12 @@ html, body {
         font-size: 19px; }
       #projects-cont #projects .proj-cont .feather-icon {
         width: 28px;
-        height: 28px; } }
+        height: 28px; }
+  #contact-cont {
+    padding: 40px 40px 200px 40px; }
+    #contact-cont #contact .heading {
+      font-size: 35px; }
+    #contact-cont #contact .desc {
+      font-size: 19px; }
+    #contact-cont #contact #contact-form {
+      width: 60%; } }
