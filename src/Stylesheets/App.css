@@ -83,7 +83,7 @@ html, body {
 
 #intro {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
@@ -108,11 +108,11 @@ html, body {
       margin: 0;
       opacity: 0;
       animation: fadein 2.5s;
-      animation-delay: 0.5s;
+      animation-delay: 0.25s;
       animation-fill-mode: forwards; }
       #intro #intro-desc #name svg > g > #idot {
         animation: bounce 1s;
-        animation-delay: 0.1s;
+        animation-delay: 0.25s;
         animation-fill-mode: forwards;
         animation-iteration-count: infinite;
         fill: white; }
@@ -121,17 +121,38 @@ html, body {
       margin: 0 0 10px 0;
       opacity: 0;
       animation: fadein 2.5s;
-      animation-delay: 0.5s;
+      animation-delay: 0.25s;
       animation-fill-mode: forwards; }
       #intro #intro-desc #role span {
         color: #d8a347; }
-    #intro #intro-desc #line {
-      animation: fadein 1.5s;
-      animation-delay: 1.5s;
-      animation-fill-mode: forwards;
-      font-size: 20px;
-      margin: 5px 0 0 0;
-      opacity: 0; }
+  #intro #social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    animation: slidelinks 2s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    position: absolute;
+    bottom: 10px;
+    opacity: 0; }
+    #intro #social-links svg {
+      margin: 10px;
+      cursor: pointer;
+      width: 30px;
+      height: 30px; }
+      #intro #social-links svg #icons > g {
+        transition: fill 0.4s; }
+      #intro #social-links svg:hover #icons > g {
+        fill: #d8a347; }
+
+@keyframes slidelinks {
+  from {
+    transform: translateY(50px);
+    opacity: 0; }
+  to {
+    transform: translateY(0px);
+    opacity: 1; } }
 
 @keyframes bounce {
   0% {
@@ -425,7 +446,7 @@ html, body {
     #contact-cont #contact .desc {
       font-size: 19px;
       font-family: "Montserrat";
-      margin: 20px 0 0 0;
+      margin: 20px 20px 0 20px;
       color: white; }
     #contact-cont #contact #contact-form {
       display: flex;
@@ -495,8 +516,6 @@ html, body {
         height: auto; }
     #intro #intro-desc #role {
       font-size: 27px; }
-    #intro #intro-desc #line {
-      font-size: 15px; }
   #me-cont {
     padding: 20px; }
     #me-cont #me .title .heading {
@@ -569,8 +588,6 @@ html, body {
         height: auto; }
     #intro #intro-desc #role {
       font-size: 35px; }
-    #intro #intro-desc #line {
-      font-size: 17px; }
   #me-cont {
     padding: 30px; }
     #me-cont #me .title .heading {
@@ -643,8 +660,6 @@ html, body {
         height: auto; }
     #intro #intro-desc #role {
       font-size: 37px; }
-    #intro #intro-desc #line {
-      font-size: 19px; }
   #me-cont {
     padding: 35px; }
     #me-cont #me .title .heading {
@@ -695,8 +710,6 @@ html, body {
         height: auto; }
     #intro #intro-desc #role {
       font-size: 40px; }
-    #intro #intro-desc #line {
-      font-size: 20px; }
   #me-cont {
     padding: 40px; }
     #me-cont #me .title .heading {

@@ -111,7 +111,7 @@ html, body {
 // Intro component
 
 #intro {
-  @include flex(row, flex-start, center);
+  @include flex(column, flex-start, center);
   width: 100%;
   height: calc(100vh - 75px);
   background-color: #262627;
@@ -132,10 +132,10 @@ html, body {
       font-size: 50px;
       margin: 0;
       opacity: 0;
-      @include animate(fadein, 2.5s, 0.5s, forwards);
+      @include animate(fadein, 2.5s, 0.25s, forwards);
 
       svg > g > #idot {
-        @include animate(bounce, 1s, 0.1s, forwards);
+        @include animate(bounce, 1s, 0.25s, forwards);
         animation-iteration-count: infinite;
         fill: white;
       }
@@ -145,19 +145,48 @@ html, body {
       font-size: 50px;
       margin: 0 0 10px 0;
       opacity: 0;
-      @include animate(fadein, 2.5s, 0.5s, forwards);
+      @include animate(fadein, 2.5s, 0.25s, forwards);
 
       span {
         color: #d8a347;
       }
     }
+  }
 
-    #line {
-      @include animate(fadein, 1.5s, 1.5s, forwards);
-      font-size: 20px;
-      margin: 5px 0 0 0;
-      opacity: 0;
+  #social-links {
+    @include flex(row, center, flex-start);
+    @include animate(slidelinks, 2s, 0s, forwards);
+    position: absolute;
+    bottom: 10px;
+    opacity: 0;
+
+    svg {
+      margin: 10px;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+
+      #icons > g {
+        transition: fill 0.4s;
+      }
+
+      &:hover {
+        #icons > g {
+          fill: #d8a347;
+        }
+      }
     }
+  }
+}
+
+@keyframes slidelinks {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
   }
 }
 
@@ -488,7 +517,7 @@ html, body {
     .desc {
       font-size: 19px;
       font-family: "Montserrat";
-      margin: 20px 0 0 0;
+      margin: 20px 20px 0 20px;
       color: white;
     }
 
@@ -598,10 +627,6 @@ html, body {
 
       #role {
         font-size: 27px;
-      }
-
-      #line {
-        font-size: 15px;
       }
     }
   }
@@ -749,10 +774,6 @@ html, body {
       #role {
         font-size: 35px;
       }
-
-      #line {
-        font-size: 17px;
-      }
     }
   }
 
@@ -898,10 +919,6 @@ html, body {
       #role {
         font-size: 37px;
       }
-
-      #line {
-        font-size: 19px;
-      }
     }
   }
 
@@ -1030,10 +1047,6 @@ html, body {
 
       #role {
         font-size: 40px;
-      }
-
-      #line {
-        font-size: 20px;
       }
     }
   }
