@@ -507,7 +507,44 @@ html, body {
     #me-cont #me #icons #icon-cont i {
       font-size: 1.5rem; }
     #me-cont #me #icons #icon-cont p {
-      font-size: 8px; } }
+      font-size: 8px; }
+  #projects-cont {
+    padding: 40px 10px 200px 10px; }
+    #projects-cont #projects .heading {
+      font-size: 20px; }
+    #projects-cont #projects #pic-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center; }
+      #projects-cont #projects #pic-list img {
+        height: 80vw;
+        margin: 10px 10px 40px 10px; }
+      #projects-cont #projects #pic-list .tv-in {
+        animation: fadein 1.5s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards; }
+      #projects-cont #projects #pic-list .got-in {
+        animation: fadein 1.5s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards; }
+      #projects-cont #projects #pic-list .tv-out {
+        animation: fadeout 1s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards; }
+      #projects-cont #projects #pic-list .got-out {
+        animation: fadeout 1s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards; }
+    #projects-cont #projects .proj-cont {
+      width: 90%; }
+      #projects-cont #projects .proj-cont .heading-cont .heading {
+        font-size: 18px; }
+      #projects-cont #projects .proj-cont .desc {
+        font-size: 14px; }
+      #projects-cont #projects .proj-cont .feather-icon {
+        width: 22px;
+        height: 22px; } }
 
 @media (min-width: 525px) {
   #header #header-link-collect {
@@ -536,7 +573,44 @@ html, body {
     #me-cont #me #icons #icon-cont i {
       font-size: 2rem; }
     #me-cont #me #icons #icon-cont p {
-      font-size: 10px; } }
+      font-size: 10px; }
+  #projects-cont {
+    padding: 40px 20px 200px 20px; }
+    #projects-cont #projects .heading {
+      font-size: 25px; }
+    #projects-cont #projects #pic-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center; }
+      #projects-cont #projects #pic-list img {
+        height: 45vw;
+        margin: 10px 10px 0px 10px; }
+      #projects-cont #projects #pic-list .tv-in {
+        animation: tv-in 1.5s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards; }
+      #projects-cont #projects #pic-list .got-in {
+        animation: got-in 1.5s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards; }
+      #projects-cont #projects #pic-list .tv-out {
+        animation: tv-out 1s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards; }
+      #projects-cont #projects #pic-list .got-out {
+        animation: got-out 1s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards; }
+    #projects-cont #projects .proj-cont {
+      width: 80%; }
+      #projects-cont #projects .proj-cont .heading-cont .heading {
+        font-size: 20px; }
+      #projects-cont #projects .proj-cont .desc {
+        font-size: 16px; }
+      #projects-cont #projects .proj-cont .feather-icon {
+        width: 24px;
+        height: 24px; } }
 
 @media (min-width: 768px) {
   #header #header-link-collect {
@@ -565,7 +639,22 @@ html, body {
     #me-cont #me #icons #icon-cont i {
       font-size: 2.5rem; }
     #me-cont #me #icons #icon-cont p {
-      font-size: 11px; } }
+      font-size: 11px; }
+  #projects-cont {
+    padding: 40px 30px 200px 30px; }
+    #projects-cont #projects .heading {
+      font-size: 30px; }
+    #projects-cont #projects #pic-list img {
+      height: 32vw; }
+    #projects-cont #projects .proj-cont {
+      width: 70%; }
+      #projects-cont #projects .proj-cont .heading-cont .heading {
+        font-size: 22px; }
+      #projects-cont #projects .proj-cont .desc {
+        font-size: 18px; }
+      #projects-cont #projects .proj-cont .feather-icon {
+        width: 26px;
+        height: 26px; } }
 
 @media (min-width: 1000px) {
   #header #header-link-collect {
@@ -594,4 +683,19 @@ html, body {
     #me-cont #me #icons #icon-cont i {
       font-size: 3rem; }
     #me-cont #me #icons #icon-cont p {
-      font-size: 12px; } }
+      font-size: 12px; }
+  #projects-cont {
+    padding: 40px 40px 200px 40px; }
+    #projects-cont #projects .heading {
+      font-size: 35px; }
+    #projects-cont #projects #pic-list img {
+      height: 26vw; }
+    #projects-cont #projects .proj-cont {
+      width: 60%; }
+      #projects-cont #projects .proj-cont .heading-cont .heading {
+        font-size: 25px; }
+      #projects-cont #projects .proj-cont .desc {
+        font-size: 19px; }
+      #projects-cont #projects .proj-cont .feather-icon {
+        width: 28px;
+        height: 28px; } }
