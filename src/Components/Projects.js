@@ -68,7 +68,7 @@ class Projects extends Component {
       name: "The Realm",
       desc: `A website that serves as a simplified introduction to the series, 'Game of Thrones'.
         Review the important locations, social rankings, big-time players, and the events prior to
-        the show that set up the current state in the series. Static website built using React JS.`,
+        the show that set up the current state in the series. Built using React JS.`,
       link: "https://therealm.imalwayssunny.xyz"
     };
 
